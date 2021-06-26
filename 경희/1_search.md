@@ -93,7 +93,7 @@ ___
 ```
 이진 탐색 (Array A, Value x)
 Step 1: head에 0, tail에 (A.length - 1)을 대입해라
-Step 2: head <= tail 이면 step 7로 가라
+Step 2: head > tail 이면 step 7로 가라
 Step 3: center에 ((head + tail) / 2)의 소수점 버림 값을 대입해라
 Step 4: A[center] = x 이면 step 8로 가라
 Step 5: A[center] < x 이면 head에 (center + 1) 값을 대입하고 반대라면 tail에 (center - 1) 값을 대입해라
@@ -115,7 +115,7 @@ Procedure binary_search
    Set tail = n - 1 
 
    while x not found
-      if head <= tail
+      if head > tail
          EXIT: x does not exists.
    
       set center = Math.floor((head + tail) / 2)
