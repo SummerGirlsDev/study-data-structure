@@ -46,7 +46,7 @@
 
   2. 이차 탐사/제곱 탐사(Quadratic Probing)
 
-      - index를 매번 1씨 증가시키는 대신 완전 제곱을 사용한다.
+      - index를 매번 1씩 증가시키는 대신 완전 제곱을 사용한다.
       - 사용 가능한 인덱스에 키를 균등하게 분배하는 데 도움이 되어 군집 문제를 해결하기 좋다.
 
 
@@ -54,7 +54,7 @@
 
       - 두 번째 해시 함수를 적용한다.
       - 일반적으로 사용하는 두 번째 해싱 함수는 다음과 같다.
-        - <code>hash<sub>2</sub>(첫번째 해싱 결과) = R - (첫번째 해싱 결과 % R)</code> 
+        - <code>hash<sub>2</sub>(key) = R - (key % R)</code> 
 
 ![개방 주소법 탐사 방법 간 비교](https://slidetodoc.com/presentation_image/8ff4e88afb1b4b09f43de766f99ceb5d/image-27.jpg)
 
@@ -233,9 +233,9 @@
       return this.secondHash(key);
     }
     
-    secondHash(Key) {
+    secondHash(key) {
       const R = this.size - 2;
-      return R - Key % R;
+      return R - key % R;
     } 
     
     initArray(size) {
@@ -247,9 +247,9 @@
     }
   }
 
+  // 이중 해싱 예시
   const exampleDouble = new HashTable(13);
 
-  // 이중 해싱 예시
   exampleDouble.putDouble(7, "hi");
   exampleDouble.putDouble(20, "hello");
   exampleDouble.putDouble(33, "sunny");
